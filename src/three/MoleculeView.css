@@ -1,0 +1,150 @@
+.viewer {
+  margin: 0;
+}
+
+.viewer__stage {
+  position: relative;
+  /* Kept close to square on purpose. The camera fits the molecule's bounding sphere
+   * to whichever field-of-view angle is narrower, so a tall stage would just push the
+   * camera back and shrink the molecule rather than showing more of it. */
+  height: min(46dvh, 380px);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  background:
+    radial-gradient(120% 90% at 50% 8%, rgb(61 220 132 / 8%) 0%, transparent 62%),
+    radial-gradient(90% 70% at 82% 96%, rgb(111 140 255 / 9%) 0%, transparent 60%),
+    var(--canvas);
+}
+
+.viewer__canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  /* The canvas owns every gesture on it, so a drag rotates instead of scrolling. */
+  touch-action: none;
+  cursor: grab;
+}
+
+.viewer__canvas:active {
+  cursor: grabbing;
+}
+
+.viewer__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  text-align: center;
+  padding: var(--gutter);
+}
+
+.viewer__error {
+  font-size: var(--step--1);
+  max-width: 24ch;
+}
+
+.viewer__pulse {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--border-strong);
+  border-top-color: var(--accent);
+  animation: viewer-spin 0.9s linear infinite;
+}
+
+@keyframes viewer-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.viewer__badge,
+.viewer__reset {
+  position: absolute;
+  top: 12px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgb(10 12 16 / 62%);
+  backdrop-filter: blur(10px);
+  color: var(--fg-muted);
+}
+
+.viewer__badge {
+  left: 12px;
+}
+
+.viewer__reset {
+  right: 12px;
+  transition: color 0.18s var(--ease-out), border-color 0.18s var(--ease-out);
+}
+
+.viewer__reset:hover {
+  color: var(--fg);
+  border-color: var(--border-strong);
+}
+
+.viewer__controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.segmented {
+  display: inline-flex;
+  padding: 3px;
+  gap: 2px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+}
+
+.segmented__item {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: var(--step--1);
+  font-weight: 500;
+  color: var(--fg-dim);
+  white-space: nowrap;
+  transition: background 0.18s var(--ease-out), color 0.18s var(--ease-out);
+}
+
+.segmented__item[aria-pressed='true'] {
+  background: var(--panel-active);
+  color: var(--fg);
+}
+
+.viewer__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border);
+}
+
+.viewer__element {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--step--1);
+}
+
+.viewer__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  /* Lifts the darker element colours off the panel. */
+  box-shadow: 0 0 0 1px rgb(255 255 255 / 12%);
+}
+
+.viewer__count {
+  color: var(--fg-dim);
+  font-size: 0.75rem;
+}

@@ -1,0 +1,281 @@
+/* Shared components: app chrome, cards, status marks. */
+
+/* ---- Top bar -------------------------------------------------------------- */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding-top: env(safe-area-inset-top);
+  background: rgb(10 12 16 / 78%);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+.topbar__inner {
+  height: var(--topbar-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-variation-settings: 'opsz' 20;
+}
+
+.wordmark__mark {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.5;
+}
+
+.wordmark__mark circle {
+  fill: var(--bg);
+}
+
+.wordmark__dim {
+  color: var(--fg-dim);
+}
+
+/* ---- Tab bar -------------------------------------------------------------- */
+
+.tabbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  height: calc(var(--tabbar-h) + env(safe-area-inset-bottom));
+  padding-bottom: env(safe-area-inset-bottom);
+  background: rgb(13 15 20 / 88%);
+  backdrop-filter: blur(18px);
+  border-top: 1px solid var(--border);
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: var(--fg-dim);
+  transition: color 0.18s var(--ease-out);
+}
+
+.tab__label {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.tab.active {
+  color: var(--fg);
+}
+
+.tab.active .icon {
+  color: var(--accent);
+}
+
+/* On a wide screen a full-width tab bar reads as a stretched phone, so it becomes a
+ * deliberate floating control instead. The app keeps one navigation either way. */
+@media (min-width: 720px) {
+  .tabbar {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    bottom: 22px;
+    width: min(420px, calc(100% - 48px));
+    height: var(--tabbar-h);
+    padding-bottom: 0;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    overflow: hidden;
+    box-shadow: 0 14px 40px rgb(0 0 0 / 45%);
+  }
+
+  .shell__main {
+    padding-bottom: calc(var(--tabbar-h) + 52px);
+  }
+}
+
+/* ---- Status marks --------------------------------------------------------- */
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+.dot--verified {
+  background: var(--verified);
+  box-shadow: 0 0 0 3px var(--verified-dim);
+}
+
+.dot--partially-verified {
+  background: var(--partial);
+  box-shadow: 0 0 0 3px var(--partial-dim);
+}
+
+.dot--unresolved {
+  background: var(--unresolved);
+  box-shadow: 0 0 0 3px var(--unresolved-dim);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 5px 11px 5px 9px;
+  border-radius: 999px;
+  font-size: var(--step--1);
+  font-weight: 500;
+  border: 1px solid var(--border);
+}
+
+.pill--verified {
+  background: var(--verified-dim);
+  color: var(--verified);
+  border-color: rgb(61 220 132 / 28%);
+}
+
+.pill--partially-verified {
+  background: var(--partial-dim);
+  color: var(--partial);
+  border-color: rgb(245 196 81 / 28%);
+}
+
+.pill--unresolved {
+  background: var(--unresolved-dim);
+  color: var(--unresolved);
+  border-color: rgb(255 107 94 / 28%);
+}
+
+/* ---- Molecule glyph ------------------------------------------------------- */
+
+.glyph {
+  width: 100%;
+  height: 100%;
+}
+
+.glyph__bonds line {
+  stroke: rgb(255 255 255 / 26%);
+  stroke-linecap: round;
+}
+
+.glyph--empty {
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- Compound card -------------------------------------------------------- */
+
+.card-grid {
+  display: grid;
+  /* Two columns on a phone; the floor rises past the phone breakpoint so a wide
+   * screen gets bigger cards rather than a dozen tiny ones. */
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--space-3);
+}
+
+@media (min-width: 720px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: var(--space-4);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.2s var(--ease-out), transform 0.2s var(--ease-out),
+    background 0.2s var(--ease-out);
+}
+
+@media (hover: hover) {
+  .card:hover {
+    border-color: var(--border-strong);
+    background: var(--panel-raised);
+    transform: translateY(-2px);
+  }
+}
+
+.card:active {
+  transform: scale(0.985);
+}
+
+.card__glyph {
+  position: relative;
+  aspect-ratio: 1;
+  padding: var(--space-2);
+  background:
+    radial-gradient(85% 70% at 50% 42%, rgb(61 220 132 / 7%) 0%, transparent 70%),
+    var(--canvas);
+  border-bottom: 1px solid var(--border);
+}
+
+.card__glyph .dot {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-3);
+}
+
+.card__class {
+  /* Long class names must not push the card wider than its grid track. */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card__name {
+  font-size: var(--step-1);
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+.card__meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  font-size: var(--step--1);
+  color: var(--fg-muted);
+}
+
+.card__meta sub {
+  font-size: 0.7em;
+}
+
+.card__mw {
+  color: var(--fg-dim);
+  font-size: 0.75rem;
+}
+
+.icon {
+  flex: 0 0 auto;
+}

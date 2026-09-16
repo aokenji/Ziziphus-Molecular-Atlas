@@ -7,25 +7,27 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sync:data": "node scripts/sync-pubchem.mjs && node scripts/build-previews.mjs",
+    "build:icons": "node scripts/build-icons.mjs"
   },
   "dependencies": {
-    "@react-spring/web": "^10.1.2",
-    "@types/react-helmet-async": "^1.0.1",
-    "3dmol": "^2.5.5",
-    "rdkit": "^0.5.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "react-helmet-async": "^3.0.0",
     "react-router-dom": "^7.18.4",
-    "smiles-drawer": "^2.4.1"
+    "three": "^0.180.0"
   },
   "devDependencies": {
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "@fontsource-variable/geist": "^5.3.0",
+    "@fontsource-variable/geist-mono": "^5.3.0",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
+    "@types/three": "^0.186.0",
     "@vitejs/plugin-react": "^6.1.1",
     "oxlint": "^1.81.0",
+    "sharp": "^0.35.4",
     "typescript": "~6.0.2",
     "vite": "^8.3.0"
   }

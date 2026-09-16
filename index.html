@@ -2,11 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Verified molecular structures and literature evidence for compounds reported in Ziziphus. A curated scientific molecular reference." />
-    <meta name="theme-color" content="#2d6a4f" />
-    <title>Ziziphus Molecular Atlas — Verified Molecular Structures</title>
+    <!-- viewport-fit=cover is what lets the tab bar sit under the home indicator. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Ziziphus Molecular Atlas</title>
+    <meta
+      name="description"
+      content="A 3D structure library for the compounds reported in Ziziphus. Every entry is cross-checked against PubChem and carries the literature it came from."
+    />
+
+    <meta name="theme-color" content="#0a0c10" />
+    <meta name="color-scheme" content="dark" />
+
+    <!-- Installed to a home screen, this should open without browser chrome. -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Ziziphus" />
+
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ziziphus Molecular Atlas" />
+    <meta property="og:title" content="Ziziphus Molecular Atlas" />
+    <meta
+      property="og:description"
+      content="A 3D structure library for the compounds reported in Ziziphus, cross-checked against PubChem."
+    />
+    <meta property="og:image" content="/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body>
     <div id="root"></div>
