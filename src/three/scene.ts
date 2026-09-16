@@ -115,7 +115,9 @@ export class MoleculeScene {
     key.position.set(3, 4, 5);
     const fill = new DirectionalLight(0x6f8cff, 0.55);
     fill.position.set(-4, -1.5, -3);
-    const rim = new DirectionalLight(0x3ddc84, 0.85);
+    // Kept restrained: in spacefill the spheres interpenetrate, and a stronger rim
+    // shows up as green speckles in every crevice rather than as an edge.
+    const rim = new DirectionalLight(0x3ddc84, 0.55);
     rim.position.set(-2.5, 3, -4.5);
     this.scene.add(hemi, key, fill, rim);
 
