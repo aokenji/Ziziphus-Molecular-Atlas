@@ -9,7 +9,7 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import sharp from 'sharp';
 
-const BG = '#0a0c10';
+const BG = '#07080b';
 const ACCENT = '#3ddc84';
 
 /** The molecule mark, scaled to `scale` of a 512 box and centred. */

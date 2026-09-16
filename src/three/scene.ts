@@ -110,7 +110,7 @@ export class MoleculeScene {
 
     // Key / fill / rim. The rim is the interface accent, which ties a structure to
     // the rest of the palette without tinting the atoms themselves.
-    const hemi = new HemisphereLight(0x9fb4d0, 0x0a0c10, 0.5);
+    const hemi = new HemisphereLight(0x9fb4d0, 0x07080b, 0.5);
     const key = new DirectionalLight(0xffffff, 2.3);
     key.position.set(3, 4, 5);
     const fill = new DirectionalLight(0x6f8cff, 0.55);

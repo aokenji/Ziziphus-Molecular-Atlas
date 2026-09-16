@@ -1,6 +1,6 @@
 <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ziziphus Molecular Atlas">
-  <rect width="512" height="512" rx="114" fill="#0a0c10" />
-  <g stroke="#3ddc84" stroke-width="22" stroke-linecap="round" fill="#0a0c10">
+  <rect width="512" height="512" rx="114" fill="#07080b" />
+  <g stroke="#3ddc84" stroke-width="22" stroke-linecap="round" fill="#07080b">
     <line x1="256" y1="154" x2="168" y2="308" />
     <line x1="256" y1="154" x2="344" y2="308" />
     <line x1="168" y1="308" x2="344" y2="308" />

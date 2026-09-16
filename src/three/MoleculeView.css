@@ -12,8 +12,8 @@
   border: 1px solid var(--border);
   overflow: hidden;
   background:
-    radial-gradient(120% 90% at 50% 8%, rgb(61 220 132 / 8%) 0%, transparent 62%),
-    radial-gradient(90% 70% at 82% 96%, rgb(111 140 255 / 9%) 0%, transparent 60%),
+    radial-gradient(120% 90% at 50% 8%, rgb(61 220 132 / 5%) 0%, transparent 62%),
+    radial-gradient(90% 70% at 82% 96%, rgb(111 140 255 / 6%) 0%, transparent 60%),
     var(--canvas);
 }
 
@@ -69,7 +69,7 @@
   padding: 5px 10px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: rgb(10 12 16 / 62%);
+  background: rgb(7 8 11 / 68%);
   backdrop-filter: blur(10px);
   color: var(--fg-muted);
 }

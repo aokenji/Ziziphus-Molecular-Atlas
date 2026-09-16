@@ -1,13 +1,13 @@
 {
   "name": "Ziziphus Molecular Atlas",
   "short_name": "Ziziphus",
-  "description": "A 3D structure library for the compounds reported in Ziziphus, cross-checked against PubChem.",
+  "description": "A molecular structure library for compounds reported in the genus Ziziphus, with 3D conformers where available.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#0a0c10",
-  "theme_color": "#0a0c10",
+  "background_color": "#07080b",
+  "theme_color": "#07080b",
   "categories": ["education", "science", "reference"],
   "icons": [
     { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },

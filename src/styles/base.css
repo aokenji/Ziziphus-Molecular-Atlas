@@ -16,7 +16,12 @@ html {
 
 body {
   min-height: 100dvh;
-  background: var(--bg);
+  /* A barely-there wash at the top edge. Below the threshold of "a gradient", but it
+   * stops a full-black page from looking like an unstyled void. */
+  background:
+    radial-gradient(130% 70% at 50% -12%, rgb(61 220 132 / 4%) 0%, transparent 58%),
+    var(--bg);
+  background-attachment: fixed;
   color: var(--fg);
   font-family: var(--font-ui);
   font-size: var(--step-0);

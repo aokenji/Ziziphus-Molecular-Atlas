@@ -7,28 +7,33 @@
  */
 
 :root {
-  /* Surfaces, darkest to lightest. */
-  --bg: #0a0c10;
-  --canvas: #0d0f14;
-  --panel: #12141a;
-  --panel-raised: #1c212b;
-  --panel-active: #2b3543;
+  /* Surfaces, darkest to lightest.
+   *
+   * The steps are deliberately narrow - roughly 2-3% lightness apart. Depth comes
+   * from the hairline borders, not from panels that sit visibly above the page.
+   * Widening these is the fastest way to make a dark interface look cheap. */
+  --bg: #07080b;
+  --canvas: #090a0e;
+  --panel: #0d0f13;
+  --panel-raised: #13161c;
+  --panel-active: #1d222a;
 
-  --border: rgb(255 255 255 / 10%);
-  --border-strong: rgb(255 255 255 / 18%);
+  /* Softer than the usual 10%/18%; on a near-black base those read as scratches. */
+  --border: rgb(255 255 255 / 7%);
+  --border-strong: rgb(255 255 255 / 13%);
 
   /* Warm off-white reads softer than #fff against a cool near-black. */
-  --fg: #f1f0ea;
-  --fg-muted: #98a0ad;
-  --fg-dim: #6b7483;
+  --fg: #ece9e1;
+  --fg-muted: #8b919c;
+  --fg-dim: #5d636e;
 
   /* Verification scale. Also drives the element palette in src/lib/elements.ts. */
   --verified: #3ddc84;
   --partial: #f5c451;
   --unresolved: #ff6b5e;
-  --verified-dim: rgb(61 220 132 / 14%);
-  --partial-dim: rgb(245 196 81 / 14%);
-  --unresolved-dim: rgb(255 107 94 / 14%);
+  --verified-dim: rgb(61 220 132 / 11%);
+  --partial-dim: rgb(245 196 81 / 11%);
+  --unresolved-dim: rgb(255 107 94 / 11%);
 
   --accent: var(--verified);
 
