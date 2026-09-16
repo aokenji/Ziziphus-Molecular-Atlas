@@ -1,3 +1,6 @@
+// The /react entrypoint, not /next - this is a Vite SPA. It patches the History API,
+// so react-router navigations are counted without any per-route wiring.
+import { Analytics } from '@vercel/analytics/react';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import { AppShell } from './components/AppShell';
 import { AboutRoute } from './routes/AboutRoute';
@@ -30,6 +33,7 @@ export function App() {
           <Route path="*" element={<NotFoundRoute />} />
         </Route>
       </Routes>
+      <Analytics />
     </BrowserRouter>
   );
 }
