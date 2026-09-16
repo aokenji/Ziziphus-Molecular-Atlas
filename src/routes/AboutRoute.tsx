@@ -114,6 +114,45 @@ export function AboutRoute() {
       </section>
 
       <section className="section">
+        <h2 className="micro section__title">Elsewhere</h2>
+        <ul className="link-list">
+          <li>
+            <a
+              className="link-card panel"
+              href="https://talanaihub.com"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <span className="link-card__text">
+                <span className="serif link-card__name">TalanaiHub</span>
+                <span className="muted link-card__desc">
+                  A bioinformatics resource for <i>Ziziphus talanai</i>, a Philippine endemic in
+                  this same genus. Ten candidate compounds docked against &alpha;-glucosidase.
+                </span>
+              </span>
+              <Icon name="external" size={16} />
+            </a>
+          </li>
+          <li>
+            <a
+              className="link-card panel"
+              href="https://aokenji.dev"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <span className="link-card__text">
+                <span className="serif link-card__name">Ken Alexander</span>
+                <span className="muted link-card__desc">
+                  Software and cloud systems — the developer behind this atlas.
+                </span>
+              </span>
+              <Icon name="external" size={16} />
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section className="section">
         <h2 className="micro section__title">Bibliography</h2>
         <ol className="refs">
           {references.map((ref) => (

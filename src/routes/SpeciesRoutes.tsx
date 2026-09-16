@@ -36,6 +36,16 @@ export function SpeciesListRoute() {
           );
         })}
       </ul>
+
+      <p className="muted note-para">
+        <i>Ziziphus talanai</i>, a Philippine endemic in the same genus, is not catalogued here.
+        It has a resource of its own at{' '}
+        <a className="link" href="https://talanaihub.com" target="_blank" rel="noreferrer noopener">
+          talanaihub.com
+          <Icon name="external" size={13} />
+        </a>
+        .
+      </p>
     </div>
   );
 }
