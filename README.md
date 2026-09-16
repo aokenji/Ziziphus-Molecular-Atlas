@@ -1,6 +1,7 @@
 # Ziziphus Molecular Atlas
 
-A mobile-first 3D structure library for the compounds reported in the genus *Ziziphus*.
+A molecular structure library for compounds reported in the genus *Ziziphus*, with 3D
+conformers where available.
 Every entry carries a cached atom-coordinate structure you can turn in three dimensions,
 a verification status derived from evidence, and the literature it came from.
 

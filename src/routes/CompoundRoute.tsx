@@ -10,7 +10,15 @@ import {
   type FieldVerification,
   type VerificationStatus,
 } from '../lib/atlas';
-import { doiUrl, formatNumber, formatWeight, pubchemUrl, shortenAuthors } from '../lib/format';
+import {
+  citationLocator,
+  doiUrl,
+  formatNumber,
+  formatWeight,
+  pubchemUrl,
+  pubmedUrl,
+  shortenAuthors,
+} from '../lib/format';
 import { MoleculeView } from '../three/MoleculeView';
 
 function CopyValue({ value, label }: { value: string; label: string }) {
@@ -191,18 +199,32 @@ export function CompoundRoute() {
                 <p className="ref__title">{ref.title}</p>
                 <p className="ref__meta muted">
                   {shortenAuthors(ref.authors)} &middot; <i>{ref.journal}</i> &middot; {ref.year}
+                  {citationLocator(ref) && <> &middot; {citationLocator(ref)}</>}
                 </p>
-                {ref.doi && (
-                  <a
-                    className="link mono ref__doi"
-                    href={doiUrl(ref.doi)}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
-                    {ref.doi}
-                    <Icon name="external" size={13} />
-                  </a>
-                )}
+                <p className="ref__ids">
+                  {ref.doi && (
+                    <a
+                      className="link mono ref__doi"
+                      href={doiUrl(ref.doi)}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      {ref.doi}
+                      <Icon name="external" size={13} />
+                    </a>
+                  )}
+                  {ref.pmid && (
+                    <a
+                      className="link mono ref__doi"
+                      href={pubmedUrl(ref.pmid)}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      PMID {ref.pmid}
+                      <Icon name="external" size={13} />
+                    </a>
+                  )}
+                </p>
               </li>
             ))}
           </ol>

@@ -531,12 +531,16 @@
     },
     {
       "id": "ref-2",
-      "authors": "Guo S, Duan JA, Tang YP, Qian DW, Zhu ZH, Qian Y, Shang EX, Su SL",
-      "year": 2011,
+      "authors": "Guo S, Duan JA, Tang YP, Yang NY, Qian DW, Su SL, Shang EX",
+      "year": 2010,
       "title": "Characterization of triterpenic acids in fruits of Ziziphus species by HPLC-ELSD-MS",
       "journal": "Journal of Agricultural and Food Chemistry",
-      "doi": "10.1021/jf2016455",
-      "evidenceType": "primary-literature"
+      "doi": "10.1021/jf101022p",
+      "evidenceType": "primary-literature",
+      "volume": "58",
+      "issue": "10",
+      "pages": "6285-6289",
+      "pmid": "20426471"
     },
     {
       "id": "ref-3",
@@ -544,7 +548,7 @@
       "year": 2000,
       "title": "Flavonoids from Ziziphus jujuba Mill var. spinosa",
       "journal": "Tetrahedron",
-      "doi": "10.1016/S0040-4020(00)00890-X",
+      "doi": "10.1016/S0040-4020(00)00842-5",
       "evidenceType": "primary-literature"
     },
     {
@@ -576,11 +580,15 @@
     },
     {
       "id": "ref-7",
-      "authors": "Pawlowska AM, Ferruzza S, Ferruzzi G, Lukšič L, Ferruzzi R, Ferruzzi MG, Ferruzza A",
+      "authors": "Pawlowska AM, Camangi F, Bader A, Braca A",
       "year": 2009,
-      "title": "Characterization of flavonoids and phenolic acids in Ziziphus jujuba fruit",
+      "title": "Flavonoids of Zizyphus jujuba L. and Zizyphus spina-christi (L.) Willd (Rhamnaceae) fruits",
       "journal": "Food Chemistry",
-      "evidenceType": "primary-literature"
+      "evidenceType": "primary-literature",
+      "volume": "112",
+      "issue": "4",
+      "pages": "858-862",
+      "doi": "10.1016/j.foodchem.2008.06.053"
     },
     {
       "id": "ref-8",

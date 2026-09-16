@@ -135,7 +135,7 @@ for (const c of curated.compounds) {
     // Only a curated formula that survives the cross-check earns "verified".
     const formulaOk = Boolean(c.molecularFormula) && c.molecularFormula === pubchem.molecularFormula;
     const mwOk = c.molecularWeight == null || Math.abs(c.molecularWeight - pubchem.molecularWeight) < 0.6;
-    if (!c.molecularFormula) notes.push('no curated formula to cross-check; identity rests on the name match alone');
+    if (!c.molecularFormula) notes.push('no curated formula to cross-check; a name match alone is not an identification');
     const a = normalise(pubchem.title);
     const b = normalise(c.preferredName);
     const titleOk = Boolean(a) && (a.includes(b) || b.includes(a));
@@ -146,7 +146,14 @@ for (const c of curated.compounds) {
     if (c.inchikey && c.inchikey !== pubchem.inchikey) {
       notes.push('curated InChIKey ' + c.inchikey + ' was wrong; corrected to ' + pubchem.inchikey);
     }
-    identity = formulaOk && mwOk && titleOk ? 'verified' : 'partially-verified';
+    // With no curated formula there is nothing to cross-examine the name against, so
+    // the identity stays unresolved rather than earning partial credit for matching a
+    // string. Natural-product names are reused across unrelated skeletons.
+    identity = formulaOk && mwOk && titleOk
+      ? 'verified'
+      : c.molecularFormula
+        ? 'partially-verified'
+        : 'unresolved';
 
     // Adopt PubChem values for anything the curated record was missing.
     row.molecularFormula = pubchem.molecularFormula ?? c.molecularFormula;

@@ -35,7 +35,19 @@ export function shortenAuthors(authors: string, keep = 3): string {
   return `${parts.slice(0, keep).join(', ')} et al.`;
 }
 
+/** Volume, issue and page range in the usual "58(10), 6285-6289" shape. */
+export function citationLocator(ref: {
+  volume?: string;
+  issue?: string;
+  pages?: string;
+}): string {
+  const volume = ref.volume ? `${ref.volume}${ref.issue ? `(${ref.issue})` : ''}` : '';
+  return [volume, ref.pages].filter(Boolean).join(', ');
+}
+
 export const doiUrl = (doi: string): string => `https://doi.org/${doi}`;
+
+export const pubmedUrl = (pmid: string): string => `https://pubmed.ncbi.nlm.nih.gov/${pmid}/`;
 
 export const pubchemUrl = (cid: number): string =>
   `https://pubchem.ncbi.nlm.nih.gov/compound/${cid}`;

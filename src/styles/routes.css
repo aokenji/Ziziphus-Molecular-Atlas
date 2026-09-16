@@ -415,8 +415,14 @@
   font-size: var(--step--1);
 }
 
-.ref__doi {
+.ref__ids {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
   margin-top: var(--space-2);
+}
+
+.ref__doi {
   font-size: 0.75rem;
 }
 

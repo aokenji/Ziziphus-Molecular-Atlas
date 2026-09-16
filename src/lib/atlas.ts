@@ -22,7 +22,11 @@ export interface Reference {
   year: number;
   title: string;
   journal: string;
+  volume?: string;
+  issue?: string;
+  pages?: string;
   doi?: string;
+  pmid?: string;
   evidenceType: 'primary-literature' | 'database-identification' | 'review';
 }
 
